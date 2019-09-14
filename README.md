@@ -2,10 +2,14 @@
 
 ## Informações importantes:
 
-Este projeto foi entregue como parte do **Fullstack Academy** (edição FutibaClub) promovido pelo **DevPleno** (www.devpleno.com).
+Este projeto em uma primeira edição foi desenvolvido como parte do **Fullstack Academy** promovido pelo DevPleno.
 
-**Participante:** Ezequiel Gnich
+E pensando nas novas tecnologias do mercado, ele será refatorado utilizando ReactJS, ReactNative e NodeJS no backend.
 
-**Chave do Certificado:** 52B8-21B2-9FF6-1B7C
+## Libs utilizadas
 
-O certificado pode ser consultado em: https://certificados.devpleno.com
+### **create-react-app**
+
+--> npx create-react-app my-app
+-->cd my-app
+--> npm start / yarn start
