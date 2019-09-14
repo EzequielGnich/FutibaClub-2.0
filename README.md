@@ -11,5 +11,3 @@ E pensando nas novas tecnologias do mercado, ele será refatorado utilizando Rea
 ### **create-react-app**
 
 --> npx create-react-app my-app
--->cd my-app
---> npm start / yarn start
