@@ -11,3 +11,7 @@ E pensando nas novas tecnologias do mercado, ele será refatorado utilizando Rea
 ### **create-react-app**
 
 --> npx create-react-app my-app
+
+### **PostgreSQL**
+
+--> npm install pg
