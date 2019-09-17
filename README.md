@@ -15,3 +15,19 @@ E pensando nas novas tecnologias do mercado, ele será refatorado utilizando Rea
 ### **PostgreSQL**
 
 --> npm install pg
+
+### **cors**
+
+--> npm install cors
+
+### **dotenv**
+
+--> npm install dotenv
+
+### **express**
+
+--> npm install express
+
+### **body-parser**
+
+--> npm install body-parser
