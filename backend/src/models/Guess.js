@@ -2,11 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const Guess = new Schema(
   {
-    result_a: {
+    guess_a: {
       type: Number,
       required: true
     },
-    result_b: {
+    guess_b: {
       type: Number,
       required: true
     },
@@ -24,13 +24,11 @@ const Guess = new Schema(
         required: true
       }
     ],
-    user_id: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Users",
-        required: true
-      }
-    ]
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: "Users",
+      required: true
+    }
   },
   {
     timestamps: true
