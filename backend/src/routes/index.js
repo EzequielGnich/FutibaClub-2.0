@@ -1,21 +1,24 @@
 const express = require("express");
 const routes = express.Router();
 
-const Account = require("../controllers/user/account");
+const User = require("../controllers/user/index");
+const Game = require("../controllers/game/index");
 
-// Rotas que se referem a usuarios
-routes.get("/user", Account.index);
-routes.post("/user/newAccount", Account.store);
+// Rota para a criação de novos usuarios
+routes.post("/user", User.store);
+
+// Rota para a busca de usuários da aplicação
+routes.get("/user", User.index);
+
+// Rotas que se referem aos jogos
+routes.get("/game");
+routes.post("/game", Game.store);
+routes.delete("/game");
+routes.post("/game/results");
 
 // Rotas que se referem a login e logout
 routes.get("/login");
 routes.get("/logout");
-
-// Rotas que se referem aos jogos
-routes.get("/game");
-routes.post("/game");
-routes.delete("/game");
-routes.post("/game/results");
 
 // Rotas que busca a classificação
 routes.get("classification");
