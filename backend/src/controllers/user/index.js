@@ -34,12 +34,14 @@ module.exports = {
         .json({ user: emailExists, error: "Usuário já cadastrado" });
 
     if (!emailExists) {
-      await User.create({
+      const user = await User.create({
         name: name,
         email: email,
         password: password,
         phoneNumber: phoneNumber
       }).catch(e => console.log(e));
+
+      res.status(200).send({ user });
     }
   }
 };
