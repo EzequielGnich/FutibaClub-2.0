@@ -2,11 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const Guess = new Schema(
   {
-    guess_a: {
+    guess_teamA: {
       type: Number,
       required: true
     },
-    guess_b: {
+    guess_teamB: {
       type: Number,
       required: true
     },
