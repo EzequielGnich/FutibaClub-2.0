@@ -30,6 +30,7 @@ routes.get("/:id/pending/:idGU/:op"); //Aceitar ou negar a entrada de uma pessoa
 routes.delete("/group/:id");
 routes.post("/group", Group.store);
 routes.post("/group/:id", Group.addUser);
+routes.get("/group", Group.index);
 
 // Inserção de palpites
 routes.post("/guess", Guess.store);
