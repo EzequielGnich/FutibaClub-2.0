@@ -54,12 +54,36 @@ module.exports = {
 
       await groupExists.save();
 
-      next();
-
       return res.status(200).json(groupExists);
     }
     return res
       .status(200)
       .json({ groupExists, error: "Usuário já cadastrado" });
+  },
+
+  async index(req, res) {
+    const { name } = req.body;
+
+    if (name == "" || null || undefined) {
+      return res.status(400).json({
+        error: "Por favor informe ao menos uma letra para realizar a pesquisa"
+      });
+    }
+
+    await Group.find(
+      { name: { $regex: ".*" + name + ".*" } },
+      (error, data) => {
+        if (!data) {
+          return res
+            .status(400)
+            .json({ error: "Erro ao buscar grupos", error });
+        } else if (data.length == 0) {
+          return res.status(400).json({
+            error: "Não foram encontrados grupo(s) com este(s) caractere(s)"
+          });
+        }
+        return res.status(200).json({ group: data });
+      }
+    );
   }
 };
