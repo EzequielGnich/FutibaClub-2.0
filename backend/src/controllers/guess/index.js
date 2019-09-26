@@ -1,11 +1,12 @@
 const Guess = require("../../models/Guess");
+const Game = require("../../models/Game");
 
 module.exports = {
   async store(req, res) {
     const { guess_teamA, guess_teamB, game_id, group_id } = req.body;
     const { user_id } = req.headers;
 
-    const game = await Guess.create({
+    const guess = await Guess.create({
       guess_teamA,
       guess_teamB,
       game_id,
@@ -13,7 +14,13 @@ module.exports = {
       user_id
     });
 
-    res.status(200).send(game);
+    if (!guess) {
+      return res
+        .status(400)
+        .json({ error: "Não foi possivel salvar o palpite" });
+    }
+
+    res.status(200).send(guess);
   },
 
   async delete(req, res) {
