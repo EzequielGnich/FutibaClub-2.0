@@ -1,5 +1,5 @@
-const Group = require("../../models/Group");
-const User = require("../../models/User");
+const Group = require("./GroupModel");
+const User = require("../user/UserModel");
 
 module.exports = {
   async store(req, res, next) {

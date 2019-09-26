@@ -1,5 +1,5 @@
-const Guess = require("../../models/Guess");
-const Game = require("../../models/Game");
+const Guess = require("./GuessModel");
+const Game = require("../game/GameModel");
 
 module.exports = {
   async store(req, res) {

@@ -1,10 +1,10 @@
 const express = require("express");
 const routes = express.Router();
 
-const User = require("../controllers/user/index");
-const Game = require("../controllers/game/index");
-const Guess = require("../controllers/guess/index");
-const Group = require("../controllers/group/index");
+const User = require("../controllers/user/User");
+const Game = require("../controllers/game/Game");
+const Guess = require("../controllers/guess/Guess");
+const Group = require("../controllers/group/Group");
 
 // Rota para a criação de novos usuarios
 routes.post("/user", User.store);
