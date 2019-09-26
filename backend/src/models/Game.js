@@ -25,7 +25,7 @@ const Game = new Schema(
     guessings: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Guess"
+        ref: "Guesses"
       }
     ]
   },
