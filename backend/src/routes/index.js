@@ -13,10 +13,8 @@ routes.post("/user", User.store);
 routes.get("/user", User.index);
 
 // Rotas que se referem aos jogos
-routes.get("/game", Game.index);
 routes.post("/game", Game.store);
-routes.delete("/game");
-routes.post("/game/results");
+routes.delete("/game", Game.delete);
 
 // Rotas que se referem a login e logout
 routes.get("/login");
@@ -34,5 +32,6 @@ routes.get("/group", Group.index);
 
 // Inserção de palpites
 routes.post("/guess", Guess.store);
+routes.delete("/guess", Guess.delete);
 
 module.exports = routes;
