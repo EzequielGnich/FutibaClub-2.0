@@ -29,13 +29,13 @@ module.exports = {
     res.status(200).send(group);
   },
 
-  async addUser(req, res, next) {
+  async addUser(req, res) {
     const user_id = req.params.id;
     const { _id } = req.body;
 
-    const usersExists = await User.findById(user_id);
+    const user = await User.findById(user_id);
 
-    if (!usersExists)
+    if (!user)
       return res
         .status(400)
         .json({ error: "usuário não existe na nossa base de dados" });
@@ -47,9 +47,9 @@ module.exports = {
         .status(400)
         .json({ error: "Grupo não existe na nossa base de dados" });
 
-    const userExists = groupExists.users.includes(user_id);
+    const userExistsInGroup = groupExists.users.includes(user_id);
 
-    if (!userExists) {
+    if (!userExistsInGroup) {
       groupExists.users.push(user_id);
 
       await groupExists.save();
