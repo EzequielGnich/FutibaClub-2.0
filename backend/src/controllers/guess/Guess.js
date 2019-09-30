@@ -20,8 +20,6 @@ module.exports = {
         .json({ error: "Não foi possivel salvar o palpite" });
     }
 
-    // adiciona o guess ao jogo
-
     const gameExists = await Game.findById(game_id);
 
     if (!gameExists)
@@ -38,10 +36,6 @@ module.exports = {
     } else {
       return res.status(400).json({ error: "Palpite já cadastrado" });
     }
-
-    next();
-
-    // fim adiciona
 
     res.status(200).send(guess);
   },
