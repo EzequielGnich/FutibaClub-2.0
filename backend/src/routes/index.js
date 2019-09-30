@@ -15,6 +15,7 @@ routes.get("/user", User.index);
 // Rotas que se referem aos jogos
 routes.post("/game", Game.store);
 routes.delete("/game", Game.delete);
+routes.get("/game", Game.index);
 
 // Rotas que se referem a login e logout
 routes.get("/login");
