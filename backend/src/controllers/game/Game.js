@@ -1,7 +1,22 @@
 const Game = require("./GameModel");
-const Guess = require("../guess/GuessModel");
 
 module.exports = {
+  async index(req, res) {
+    const { _id, team, hour, day } = req.body;
+
+    if ((_id || team || hour || day) == "") {
+      return res
+        .status(400)
+        .json({ error: "Digite um nome, hora ou dia para pesquisar um jogo" });
+    }
+
+    const game = await Game.find({
+      date: { $regex: ".*" + day + ".*" }
+    });
+
+    console.log(game);
+  },
+
   async store(req, res) {
     const { teamA, teamB, schedule } = req.body;
     const { createdBy } = req.headers;
